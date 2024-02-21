@@ -13,9 +13,9 @@ def read_challenge(directory):
     
     return challenge_data
 
-if len(sys.argv) > 1:
+if len(sys.argv) > 2:
     action = sys.argv[1]
-    if action in ["install", "update"] and len(sys.argv) > 2:
+    if action in ["install", "update"]:
         base_dir = sys.argv[2] 
         difficulty = sys.argv[3] if len(sys.argv) > 3 else None
 
