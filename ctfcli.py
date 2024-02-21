@@ -8,15 +8,15 @@ def get_dirs(base_dir):
 
 def read_challenge(directory):
     challenge_path = os.path.join(directory, "challenge.yml")
-    with open(challenge_path, "r") as f:
-        challenge_data = yaml.safe_load(f)
+    with open(challenge_path, "r") as file:
+        challenge_data = yaml.safe_load(file)
     
     return challenge_data
 
 if len(sys.argv) > 1:
     action = sys.argv[1]
-    if action in ["install", "update"]:
-        base_dir = sys.argv[2] if len(sys.argv) > 2 else "."
+    if action in ["install", "update"] and len(sys.argv) > 2:
+        base_dir = sys.argv[2] 
         difficulty = sys.argv[3] if len(sys.argv) > 3 else None
 
         directories = get_dirs(base_dir)
